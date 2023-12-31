@@ -8,8 +8,7 @@ import org.springframework.stereotype.Component;
 public class CallServiceV0 {
 
     public void external() {
-        log.info("call external");
-        internal(); //내부 메서드 호(this.internal())
+        log.info("call external"); internal();//내부 메서드 호출(this.internal())
     }
 
     public void internal() {

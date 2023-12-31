@@ -2,6 +2,7 @@ package hello.aop.internalcall;
 
 import hello.aop.internalcall.aop.CallLogAspect;
 import lombok.extern.slf4j.Slf4j;
+import org.aspectj.weaver.ast.Call;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,17 +12,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @Import(CallLogAspect.class)
 @SpringBootTest
-class CallServiceV0Test {
-
-    @Autowired CallServiceV0 callServiceV0;
+class CallServiceV1Test {
+    @Autowired
+    CallServiceV1 callServiceV1;
 
     @Test
     void external() {
-        callServiceV0.external();
-    }
-
-    @Test
-    void internal() {
-        callServiceV0.internal();
+        callServiceV1.external();
     }
 }
